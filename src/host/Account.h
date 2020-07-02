@@ -67,6 +67,8 @@ public:
   Repository *repository(int index) const;
   Repository *addRepository(const QString &name, const QString &fullName);
 
+  void sortRepos();
+
   QString repositoryPath(int index) const;
   void setRepositoryPath(int index, const QString &path);
 

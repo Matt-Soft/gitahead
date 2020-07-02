@@ -159,6 +159,7 @@ void Accounts::load()
       repo->setUrl(Repository::Https, settings.value("https_url").toString());
       repo->setUrl(Repository::Ssh, settings.value("ssh_url").toString());
     }
+    account->sortRepos();
     settings.endArray();
 
     // Try to connect if no repos were loaded.

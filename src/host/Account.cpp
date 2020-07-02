@@ -78,6 +78,16 @@ Repository *Account::repository(int index) const
   return mRepos.at(index);
 }
 
+bool repoCompareName(const Repository *v1, const Repository *v2)
+{
+    return v1->name() < v2->name();
+}
+
+void Account::sortRepos()
+{
+  std::sort(mRepos.begin(), mRepos.end(), repoCompareName);
+}
+
 Repository *Account::addRepository(
   const QString &name,
   const QString &fullName)
